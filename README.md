@@ -22,9 +22,42 @@ Nota: Solo la masa cuesta 10.000 pesos y los ingredientes adicionales cuestan 3.
 
 - Desarrollar una vista para que muestre el traking diario de las pizzas. Aqui se tiene que ver el detalle de las pizzas: Ingredientes, numero de pizzas, nombre de la pizza, precio de la pizza y la fecha en que se vendio; y de los clientes: Nombre y telefono.
 
+## Solucion
+
+Para el desarrollo de este projecto, se utilizaron las librerias react, react-dom y react-scrips.
+
+La plataforma diseñada cuenta con 3 vistas: en la principal se puede construir la pizza y ver el total del pedido, en la segunda se puede confirmar el pedido ingresando los datos del cliente y en la tercera se puede ver el tracking que la pizeria ha tenido en el dia.
+
+Nota 1: Para la lista de "opciones de aderezo", la lista de "aderezo selecionado" y la lista de "tracking" se planteo una ventana sin Barscroll visible pero con la funcionalidad de scrolling.
+
+Nota 2: Para salir de la vista "confirmar el pedido" se debe obligatoriamente ingresar el nombre y el telefono de la cliente para la pizza seleccionada.
+
+## Installation
+
+Instala Node.js
+
+## Usage
+
+Entra a la carpeta app_pizzaya
+- cd app_pizzaya
+
+Instala todos los componentes necesarios para trabajar con react
+- npm install
+
+Una vez instalado todo, ejecuta el modo development para ver el projecto en tu browser
+- yarn start
+
+## Status del projecto
+
+La plataforma PizzaYa se le debe mejorar el css en las vistas de tracking y confirm order, pero esta funcionando deacuerdo a los requerimientos. Se debe hacer un split del codigo en components para que quede mas organizado.
+
 ## Problemas
 
+Formato CSS con tablas en React
+
 ## Licencia
+
+free use license
 
 ## Author
 

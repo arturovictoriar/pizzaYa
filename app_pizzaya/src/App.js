@@ -98,7 +98,7 @@ class PizzaYa extends React.Component {
   /**
    * Gestiona los aderezos selecionados
    * @date 2020-07-02
-   * @param {any} e
+   * @param {any} e evento
    * @returns {any}
    */
   handleToppingOptionClick = (e) => {
@@ -316,8 +316,8 @@ class PizzaYa extends React.Component {
 /**
  * Header de la plataforma, aloja el titulo y el boton para ver el tracking
  * @date 2020-07-02
- * @param {any} {openTrackingTable
- * @param {any} handleCheckingTracking}
+ * @param {any} {openTrackingTable referencia para el boton de abrir el tracking
+ * @param {any} handleCheckingTracking} funcion que gestiona el trackin
  * @returns {any}
  */
 function Header({ openTrackingTable, handleCheckingTracking }) {
@@ -342,11 +342,11 @@ function Header({ openTrackingTable, handleCheckingTracking }) {
 /**
  * Seleciona el aderezo
  * @date 2020-07-02
- * @param {any} {toppingOptions
- * @param {any} toppingPrice
- * @param {any} chickenToppingPrice
- * @param {any} peperoniToppingPrice
- * @param {any} handleToppingOptionClick
+ * @param {any} {toppingOptions todos los aderezos
+ * @param {any} toppingPrice precio de todos los aderezos
+ * @param {any} chickenToppingPrice precio especifico del pollo
+ * @param {any} peperoniToppingPrice precio especifico del peperoni
+ * @param {any} handleToppingOptionClick funcion que gestiona los aderezos seleccionados
  * @param {any} }
  * @returns {any}
  */
@@ -379,7 +379,7 @@ function ToppingSelect({
 /**
  * Muestra todas las optiones de aderezo
  * @date 2020-07-02
- * @param {any} {topping}
+ * @param {any} {topping} Aderezo
  * @returns {any}
  */
 function ToppingOption({ topping }) {
@@ -405,8 +405,8 @@ function ToppingOption({ topping }) {
 /**
  * Muestra el dibujo de la pizza
  * @date 2020-07-02
- * @param {any} {toppingOptions
- * @param {any} selectedToppings}
+ * @param {any} {toppingOptions lista de aderezos
+ * @param {any} selectedToppings} lista de aderzos seleccionados
  * @returns {any}
  */
 function Pizza({ toppingOptions, selectedToppings }) {
@@ -429,8 +429,8 @@ function Pizza({ toppingOptions, selectedToppings }) {
 /**
  * Agrega los aderezos encima de la pizza
  * @date 2020-07-02
- * @param {any} {topping
- * @param {any} toppingAmount}
+ * @param {any} {topping aderezos
+ * @param {any} toppingAmount} candidad de aderezo
  * @returns {any}
  */
 function PizzaTopping({ topping, toppingAmount }) {
@@ -451,10 +451,10 @@ function PizzaTopping({ topping, toppingAmount }) {
 /**
  * Muestra los detalles de la orden
  * @date 2020-07-02
- * @param {any} {selectedToppings
- * @param {any} totalPrice
- * @param {any} confirmOrderBtnRef
- * @param {any} handleOrderSubmit
+ * @param {any} {selectedToppings lista de aderezos seleccionados
+ * @param {any} totalPrice precio total de la pizza
+ * @param {any} confirmOrderBtnRef referencia del boton para confirmar orden
+ * @param {any} handleOrderSubmit funcion que gestiona la orden de pizza
  * @param {any} }
  * @returns {any}
  */
@@ -519,20 +519,20 @@ function OrderDetails({
 /**
  * Muestra el resumen del pedido y pido algunos datos personales
  * @date 2020-07-02
- * @param {any} {closeConfirmationBtnRef
- * @param {any} handleOrderSubmit
- * @param {any} username
- * @param {any} handleName
- * @param {any} telephone
- * @param {any} handleTelephone
- * @param {any} namePizza
- * @param {any} price
- * @param {any} date
+ * @param {any} {closeConfirmationBtnRef referencia para el boton de cerrar en la confimacion de la orden
+ * @param {any} handleOrderSubmit funcion que gestiona la orden elegida
+ * @param {any} username nombre del cliente
+ * @param {any} handleName funcion que guarda el nombre del cliente
+ * @param {any} telephone telefono del cliente
+ * @param {any} handleTelephone funcion que guarda el telefono
+ * @param {any} namePizza nombre de la pizza
+ * @param {any} price precio de la pizza
+ * @param {any} date fecha en la que se tramito la orden
  * @param {any} }
  * @returns {any}
  */
 function OrderConfirmation({
-  closeConfirmationBtnRef,
+  closeConfirmationBtnRef, 
   handleOrderSubmit,
   username,
   handleName,
@@ -597,8 +597,8 @@ function OrderConfirmation({
 /**
  * Muestra las ventas del dia
  * @date 2020-07-02
- * @param {any} {handleCheckingTracking
- * @param {any} closeTrackingTable}
+ * @param {any} {handleCheckingTracking funcion que gestiona el tracking
+ * @param {any} closeTrackingTable} referncia del boton para cerrar el tracking
  * @returns {any}
  */
 function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {

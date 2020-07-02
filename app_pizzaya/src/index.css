@@ -30,7 +30,7 @@ body {
               0 3px 6px rgba(0, 0, 0, 0.23);
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
-    min-height: 94.8vh;
+    min-height: 97.5vh;
     color: #1a1a1a;
     background-image: linear-gradient(var(--red), #b33a25);
 }
@@ -39,6 +39,14 @@ header {
     background-color: #3d2b1e;
     background-image: linear-gradient(#5f2a2a, #551919);
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -75,7 +83,7 @@ h3 {
     grid-gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 10px 20px 10px 20px;
+    padding: 20px 20px 10px 20px;
 }
 
 .btn {
@@ -327,20 +335,41 @@ h3 {
   overflow-y: scroll;
 }
 
-/* .order-scroll-bar::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; 
-} */
+.tracking-scroll-bar {
+  padding-right: 20px;
+  margin: 0px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
 
 .order-toppings-list {
-    /* display: flex;
-    flex-wrap: wrap; */
     font-size: 20px;
     padding-left: 30px;
     margin-bottom: 10px;
     text-transform: capitalize;
     text-align:center;
 }
+
+.tracking-list {
+    font-size: 20px;
+    padding-left: 60px;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.tracking-list table {
+    border-collapse: collapse;
+  }
+  
+ .tracking-list table, .tracking-list th, .tracking-list td {
+    text-align: center;
+    border: 1px solid black;
+  }
+
+/* .tracking-list th, .tracking-list td {
+    padding: 10px 40px 0px 0px;
+} */
 
 .order-toppings-list li {
     /* flex: 1 0 170px;
@@ -359,7 +388,8 @@ th, td {
 
 /* Order Confirmation */
 
-.order-confirmation {
+.order-confirmation,
+.tracking-view {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,8 +420,50 @@ form {
     transform: translateY(-50vw);
     animation: slideInDown 700ms 100ms forwards cubic-bezier(0.17, 0.67, 0.66, 1.25);
   }
+
+  .tracking-format {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    min-width: 100px;
+    min-height: 200px;
+    padding: 20px 40px 40px 40px;
+    border-radius: 6px;
+    box-shadow: 0px 8px 36px #222;
+    background-color: #fefefe;
+    transform: translateY(-50vw);
+    animation: slideInDown 700ms 100ms forwards cubic-bezier(0.17, 0.67, 0.66, 1.25);
+  }
   
-  form > h1, form > h2 {
+ form > h2, .tracking-format > h3 {
+    text-transform: none;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin-top: 0.20em;
+    color: #222;
+    letter-spacing: 2px;
+    margin: 0px;
+  }
+
+  .tracking-format > p {
+    text-transform: none;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin-top: 0.20em;
+    color: #222;
+    letter-spacing: 2px;
+    padding-bottom: 0.30em;
+  }
+
+  .tracking-format > h1,  form > h1 {
     text-transform: none;
     text-shadow: none;
     display: flex;
@@ -795,6 +867,16 @@ left: 52%;
   left: 50%;
   width: 100%;
   height: 100%;
+}
+
+.logo-pizza-ya {
+  width: 15%;
+  height: 8%;
+  border-radius: 50%;
+  background-image: url('/logo.png');
+  /* background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;  */
 }
 
 /* Media Queries */

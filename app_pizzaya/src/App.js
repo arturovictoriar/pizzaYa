@@ -69,6 +69,15 @@ class PizzaYa extends React.Component {
     namePizza: "",
     date: "",
     checkTrackingDaily: false,
+    allNamePizzas: [
+        'La light',
+        'La simple',
+        'La duo',
+        'Trifasica',
+        'Muy poquito',
+        'La garosa',
+        'Hasta estallar'
+    ]
   };
 
   confirmOrderBtnRef = React.createRef();
@@ -100,6 +109,28 @@ class PizzaYa extends React.Component {
           this.closeConfirmationBtnRef.current.focus();
           this.setState({ totalPrice: parseInt(this.totalPricePizzaYa()) });
           this.setState({ date: new Date().toLocaleString() });
+          switch(this.state.selectedToppings.length) {
+            case 0:
+                this.setState({ namePizza: this.state.allNamePizzas[0] });
+            break;
+            case 1:
+                this.setState({ namePizza: this.state.allNamePizzas[1] });
+            break;
+            case 2:
+                this.setState({ namePizza: this.state.allNamePizzas[2] });
+            break;
+            case 3:
+                this.setState({ namePizza: this.state.allNamePizzas[3] });
+            break;
+            case 4: case 6: case 7: case 8: case 9: case 10:
+                this.setState({ namePizza: this.state.allNamePizzas[4] });
+            break;
+            case 11: case 12: case 13: case 14:
+                this.setState({ namePizza: this.state.allNamePizzas[5] });
+            break;
+            default:
+                this.setState({ namePizza: this.state.allNamePizzas[6] });
+          }
         } else {
           this.confirmOrderBtnRef.current.focus();
           this.saveOrder();
@@ -128,6 +159,8 @@ class PizzaYa extends React.Component {
     order.namePizza = this.state.namePizza;
     order.totalPrice = this.state.totalPrice;
     order.date = this.state.date;
+    order.numberPiza = 1;
+    order.toppings = this.state.selectedToppings;
     trackingDailyPizzaYa.push(order);
   };
 
@@ -442,6 +475,10 @@ function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {
   trackingDailyPizzaYa.map((order) => {
     return (totalIncome += order.totalPrice);
   });
+  let pizzasSold = 0;
+  trackingDailyPizzaYa.map((order) => {
+    return (pizzasSold += order.numberPiza);
+  });
   return (
     <div className="tracking-view">
       <div className="tracking-format">
@@ -455,6 +492,7 @@ function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {
                 <th>Pizza</th>
                 <th>Precio</th>
                 <th>Fecha</th>
+                <th>Ingredientes</th>
               </tr>
             </thead>
             <tbody>
@@ -465,11 +503,14 @@ function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {
                   <td>{order.namePizza}</td>
                   <td>{order.totalPrice}</td>
                   <td>{order.date}</td>
+                  <td>{order.toppings.join(', ')}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <h3>Pizzas Vendidas</h3>
+        <p className="price">{`${pizzasSold}`}</p>
         <h3>Total Vendido</h3>
         <p className="price">{`$${totalIncome}`}</p>
         <button

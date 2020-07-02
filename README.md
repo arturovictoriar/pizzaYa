@@ -28,15 +28,15 @@ Para el desarrollo de este projecto, se utilizaron las librerias react, react-do
 
 La plataforma diseñada cuenta con 3 vistas: en la principal se puede construir la pizza y ver el total del pedido, en la segunda se puede confirmar el pedido ingresando los datos del cliente y en la tercera se puede ver el tracking que la pizeria ha tenido en el dia.
 
-Nota 1: Para la lista de "opciones de aderezo", la lista de "aderezo selecionado" y la lista de "tracking" se planteo una ventana sin Barscroll visible pero con la funcionalidad de scrolling.
+Nota 1: Para la lista de "opciones de aderezo", la lista de "aderezo selecionado" y la lista de "tracking" se planteo una ventana sin BarScroll visible pero con la funcionalidad de scrolling.
 
 Nota 2: Para salir de la vista "confirmar el pedido" se debe obligatoriamente ingresar el nombre y el telefono de la cliente para la pizza seleccionada.
 
-## Installation
+## Instalacion
 
 Instala Node.js
 
-## Usage
+## Uso
 
 Entra a la carpeta app_pizzaya
 - cd app_pizzaya
@@ -47,7 +47,7 @@ Instala todos los componentes necesarios para trabajar con react
 Una vez instalado todo, ejecuta el modo development para ver el projecto en tu browser
 - yarn start
 
-## Status del projecto
+## Estatus del projecto
 
 La plataforma PizzaYa se le debe mejorar el css en las vistas de tracking y confirm order, pero esta funcionando deacuerdo a los requerimientos. Se debe hacer un split del codigo en components para que quede mas organizado.
 

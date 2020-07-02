@@ -1,18 +1,6 @@
 import React from 'react';
-import './App.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-class PizzaBuilder extends React.Component {
+class PizzaYa extends React.Component {
 
   state = {
       toppingOptions: {
@@ -69,21 +57,11 @@ class PizzaBuilder extends React.Component {
           }
       },
       selectedToppings: [],
-      basePrice: 1000,
-      toppingPrice: 150,
-      discount: {
-          userCode: '',
-          applied: false,
-          codes: {
-              codepen: 25,
-              css: 20,
-              george: 30,
-              html: 10,
-              javascript: 15,
-              pizza: 40,
-              react: 35
-          }
-      },
+      basePrice: 10000,
+      toppingPrice: 3000,
+      chikenToppingPrice: 5000,
+      peperoniToppingPrice: 4500,
+      totalPrice: 0,
       orderConfirmed: false
   }
 
@@ -101,18 +79,6 @@ class PizzaBuilder extends React.Component {
       }
   }
 
-  handleDiscountInput = e => {
-
-      const value = e.target.value.trim().toLowerCase();
-
-      this.setState(prevState => ({ discount: { ...prevState.discount, userCode: value } }));
-      if (this.state.discount.applied) {
-          this.setState(prevState => ({ discount: { ...prevState.discount, applied: false } }));
-      }
-  }
-
-  handleDiscountClick = () => this.setState(prevState => ({ discount: { ...prevState.discount, applied: true } }));
-
   handleOrderSubmit = () => {
       this.setState(prevState => (
           { orderConfirmed: !prevState.orderConfirmed }
@@ -123,6 +89,22 @@ class PizzaBuilder extends React.Component {
       })
   };
 
+  totalPricePizzaYa = () => {
+    let total = this.state.basePrice;
+    this.state.selectedToppings.map(topping => {
+        if (topping === 'pollo') {
+            total += this.state.chikenToppingPrice;
+        } else if (topping === 'pepperoni') {
+            total += this.state.peperoniToppingPrice;
+        } else {
+            total += this.state.toppingPrice;
+        }
+        return total;
+    });
+    this.setState.totalPrice = total;
+    return total.toString();
+  }
+
   render() {
       return (
           <React.Fragment>
@@ -131,18 +113,17 @@ class PizzaBuilder extends React.Component {
                   <div className='container'>
                       <ToppingSelect
                           toppingOptions={ Object.entries(this.state.toppingOptions) }
-                          toppingPrice={ (this.state.toppingPrice / 100).toFixed(2) }
+                          toppingPrice={ this.state.toppingPrice.toString() }
+                          chickenToppingPrice={ this.state.chikenToppingPrice.toString() }
+                          peperoniToppingPrice={ this.state.peperoniToppingPrice.toString() }
                           handleToppingOptionClick={ this.handleToppingOptionClick } />
                       <Pizza
                           selectedToppings={ this.state.selectedToppings }
                           toppingOptions={ this.state.toppingOptions } />
                       <OrderDetails
                           selectedToppings={ this.state.selectedToppings }
-                          totalPrice={ ((this.state.basePrice + (this.state.toppingPrice * this.state.selectedToppings.length)) / 100).toFixed(2) }
-                          discount={ this.state.discount }
+                          totalPrice={ this.totalPricePizzaYa() }
                           confirmOrderBtnRef={ this.confirmOrderBtnRef }
-                          handleDiscountInput={ this.handleDiscountInput }
-                          handleDiscountClick={ this.handleDiscountClick }
                           handleOrderSubmit={ this.handleOrderSubmit }
                       />
                       {
@@ -168,11 +149,11 @@ function Header() {
   );
 }
 
-function ToppingSelect({ toppingOptions, toppingPrice, handleToppingOptionClick }) {
+function ToppingSelect({ toppingOptions, toppingPrice, chickenToppingPrice, peperoniToppingPrice, handleToppingOptionClick }) {
   return (
       <div className='topping-select'>
-        <h2>Toppings</h2>
-        <p className='toppings-info'>Toppings charged at { `$${toppingPrice}` } each.</p>
+        <h2>Aderezos</h2>
+        <p className='toppings-info'>Cada aderezo vale { `$${toppingPrice}` }. Excepto el pollo y el peperoni que cuestan { `$${chickenToppingPrice} y $${peperoniToppingPrice}` } respectivamente.</p>
           <div className='topping-scroll-bar'>
           <ul className='topping-options' onClick={ handleToppingOptionClick }>
               { toppingOptions.map(topping => <ToppingOption key={ topping[0] } topping={ topping[0] } />) }
@@ -224,34 +205,32 @@ function PizzaTopping({ topping, toppingAmount }) {
   return toppings;
 }
 
-function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnRef, handleDiscountInput, handleDiscountClick, handleOrderSubmit }) {
-
-  const validDiscount = Object.keys(discount.codes).includes(discount.userCode);
+function OrderDetails({ selectedToppings, totalPrice, confirmOrderBtnRef, handleOrderSubmit }) {
 
   return (
       <div className='order'>
-          <h2>Order Details</h2>
+          <h2>Detalles de la orden</h2>
           <div className='order-toppings'>
               <div className='order-scroll-bar'>
                 <table className='order-toppings-list'>
                     <thead>
                         <tr>
                             <th>Item</th>
-                            <th>Content</th>
-                            <th>Price</th>
+                            <th>Concepto</th>
+                            <th>Precio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr key={0}>
                             <td>1</td>
                             <td>masa</td>
-                            <td>10.00</td>
+                            <td>10000</td>
                         </tr>
                         { selectedToppings.map((topping, index) => (
                         <tr key={index + 1}>
                             <td>{index + 2}</td>
                             <td>{ topping }</td>
-                            <td>1.5</td>
+                            { (topping === 'pollo') ? <td>5000</td> : ((topping === 'pepperoni') ? <td>4500</td>: <td>3000</td>) }
                         </tr>
                         )) }
                     </tbody>
@@ -262,8 +241,7 @@ function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnR
               <h3>Total Price:</h3>
               <p className='price'>
                   {
-                      `$${discount.applied && validDiscount ?
-                          (totalPrice - (totalPrice * (discount.codes[discount.userCode] / 100))).toFixed(2) : totalPrice}`
+                      `$${ totalPrice }`
                   }
               </p>
               <button
@@ -272,7 +250,7 @@ function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnR
                   aria-label='Confirm Order'
                   ref={ confirmOrderBtnRef }
               >
-                  Order
+                  Ordenar
               </button>
           </div>
       </div>
@@ -280,22 +258,67 @@ function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnR
 }
 
 function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
-  return (
-      <div className='order-confirmation'>
-          <div className='order-modal'>
-              <h2>Order Confirmed</h2>
-              <p>Your pizza will be with you shortly!</p>
-              <button
-                  className='btn close-btn'
-                  onClick={ handleOrderSubmit }
-                  aria-label="Close Confirmation"
-                  ref={ closeConfirmationBtnRef }
-              >
-                  Close
-              </button>
-          </div>
-      </div>
-  );
-}
+    return (
+        <div className='order-confirmation'>
+            <form>
+                    <h1>Datos del cliente</h1>
 
-export default PizzaBuilder;
+                    <label className='label-form'>
+                        Nombre:
+                        <input
+                        name="nombre"
+                        type="nombre"
+                        required />
+                    </label>
+
+                    <label>
+                        Telefono:
+                        <input
+                        name="telefono"
+                        type="telefono"
+                        required />
+                    </label>
+
+                    <h2>Resumen</h2>
+
+                    <div>
+                        <p><b>Nombre:</b> Arturo Victoria Rincon</p>
+                        <p><b>Telefono:</b> 3104267245</p>
+                        <p><b>Nombre de la pizza:</b> Madre mia</p>
+                        <p><b>Precio:</b> 478</p>
+                        <p><b>Fecha:</b> hoy</p>
+                    </div>
+
+                    <button 
+                        className='btn close-btn'
+                        onClick={ handleOrderSubmit }
+                        aria-label="Close Confirmation"
+                        ref={ closeConfirmationBtnRef }
+                    >
+                        Confirmar pedido
+                    </button>
+                </form>
+        </div>
+    );
+  }
+
+// function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
+//   return (
+//       <div className='order-confirmation'>
+//           <div className='order-modal'>
+//               <h2>Order Confirmed</h2>
+//               <p>Your pizza will be with you shortly!</p>
+//               <button
+//                   className='btn close-btn'
+//                   onClick={ handleOrderSubmit }
+//                   aria-label="Close Confirmation"
+//                   ref={ closeConfirmationBtnRef }
+//               >
+//                   Confirmar pedido
+//               </button>
+//           </div>
+//       </div>
+//   );
+// }
+
+export default PizzaYa;

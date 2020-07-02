@@ -30,7 +30,7 @@ body {
               0 3px 6px rgba(0, 0, 0, 0.23);
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
-    min-height: 100vh;
+    min-height: 94.8vh;
     color: #1a1a1a;
     background-image: linear-gradient(var(--red), #b33a25);
 }
@@ -110,7 +110,7 @@ h3 {
 .topping-scroll-bar {
   padding: 0px 40px 0px 0px;
   margin: 0px;
-  max-height: 300px;
+  max-height: 270px;
   overflow-y: scroll;
 }
 
@@ -127,6 +127,7 @@ h3 {
 .toppings-info {
     font-size: 16px;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .toppings-info li {
@@ -374,29 +375,69 @@ th, td {
     animation: fadeIn 120ms linear forwards;
 }
 
-.order-modal {
-    font-size: 20px;
-    width: 450px;
-    max-width: 100%;
-    text-align: center;
-    padding: 50px 20px 40px;
-    border-radius: 10px;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    min-width: 100px;
+    min-height: 400px;
+    padding: 20px 40px 40px 40px;
+    border-radius: 6px;
+    box-shadow: 0px 8px 36px #222;
+    background-color: #fefefe;
     transform: translateY(-50vw);
     animation: slideInDown 700ms 100ms forwards cubic-bezier(0.17, 0.67, 0.66, 1.25);
-}
+  }
+  
+  form > h1, form > h2 {
+    text-transform: none;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 0.20em;
+    color: #222;
+    letter-spacing: 2px;
+    margin: 0px;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    color: #444;
+    font-weight: lighter;
+  }
+  
+  input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+  }
 
-.order-modal h2 {
-    line-height: 1.2;
-}
-
-.order-modal p {
-    line-height: 1.5;
-    margin-bottom: 22px;
-}
+  input, select {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #d6d1d5;
+    margin-top: 5px;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: 35px;
+  }
+  form input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-top: 2em;
+    margin-right: 10px;
+  }
 
 .close-btn {
+    margin-top: 20px;
     background-color: var(--green);
 }
 
@@ -516,7 +557,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 2;
 }
 
 .champiñon-1 {
@@ -537,7 +577,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 2;
 }
 
 .pimenton-1 {
@@ -558,7 +597,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 2;
 }
 
 .cebolla-1 {
@@ -578,7 +616,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 3;
 }
 
 .pollo-1 {
@@ -598,7 +635,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 3;
 }
 
 .piña-1 {
@@ -618,7 +654,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 1;
 }
 
 .aceituna-1 {
@@ -638,7 +673,6 @@ left: 52%;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center; 
-    z-index: 1;
 }
 
 .jalapeño-1 {
@@ -658,7 +692,6 @@ left: 52%;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center; 
-  z-index: 1;
 }
 
 .carne-1 {
@@ -678,7 +711,6 @@ left: 52%;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center; 
-  z-index: 1;
 }
 
 .ciruela-1 {
@@ -698,7 +730,6 @@ left: 52%;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center; 
-  z-index: 1;
 }
 
 .maiz-1 {
@@ -717,8 +748,7 @@ left: 52%;
   background-image: url('/oregano.png');
   background-size:     cover;
   background-repeat:   no-repeat;
-  background-position: center center; 
-  z-index: 1;
+  background-position: center center;
 }
 
 .oregano-1 {
@@ -739,7 +769,6 @@ left: 52%;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center; 
-  z-index: 1;
 }
 
 .salami-1 {
@@ -759,7 +788,6 @@ left: 52%;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center; 
-  z-index: 1;
 }
 
 .tomate-1 {

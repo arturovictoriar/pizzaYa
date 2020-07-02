@@ -3,102 +3,101 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    --red: #ce442c;
-    --blue: #0e447a;
-    --light-blue: #1b558e;
-    --green: #428302;
-    --white: #fcfcfc;
-    --shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-              0 3px 6px rgba(0, 0, 0, 0.23);
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    min-height: 97.5vh;
-    color: #1a1a1a;
-    background-image: linear-gradient(var(--red), #b33a25);
+  --red: #ce442c;
+  --blue: #0e447a;
+  --light-blue: #1b558e;
+  --green: #428302;
+  --white: #fcfcfc;
+  --shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  min-height: 97.5vh;
+  color: #1a1a1a;
+  background-image: linear-gradient(var(--red), #b33a25);
 }
 
 header {
-    background-color: #3d2b1e;
-    background-image: linear-gradient(#5f2a2a, #551919);
-    box-shadow: var(--shadow);
-    display: flex;
-    justify-content: space-around;
+  background-color: #3d2b1e;
+  background-image: linear-gradient(#5f2a2a, #551919);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-around;
 }
 
 .button-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-    font-size: calc(18px + 1.5vw);
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
-    padding: 0.7em;
+  font-size: calc(18px + 1.5vw);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
+  padding: 0.7em;
 }
 
 h1 span {
-    padding: 0 0.2em;
+  padding: 0 0.2em;
 }
 
 h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    align-items: start;
-    grid-gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 20px 10px 20px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  align-items: start;
+  grid-gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 10px 20px;
 }
 
 .btn {
-    font: inherit;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 :focus {
-    outline: thin dotted var(--blue);
+  outline: thin dotted var(--blue);
 }
 
 /* Topping Selection */
 
 .topping-select {
-    grid-row: 1;
-    padding: 10px 0px 20px 20px;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    max-height: 450px;
-    border-radius: 10px;
+  grid-row: 1;
+  padding: 10px 0px 20px 20px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  max-height: 450px;
+  border-radius: 10px;
 }
 
 .topping-scroll-bar {
@@ -114,22 +113,22 @@ h3 {
 }
 
 .toppings-info {
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .toppings-info li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .topping-option {
-    position: relative;
-    margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .topping-option:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .topping-options {
@@ -137,175 +136,174 @@ h3 {
 }
 
 .topping-label {
-    position: relative;
-    display: block;
-    font-size: 20px;
-    border-radius: 5px;
-    border: 2px solid var(--blue);
-    padding: 20px 0px 20px 80px;
-    cursor: pointer;
-    user-select: none;
-    text-transform: capitalize;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--blue);
+  padding: 20px 0px 20px 80px;
+  cursor: pointer;
+  user-select: none;
+  text-transform: capitalize;
+  overflow: hidden;
 }
 
 .topping-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 62.5px;
-    background-color: var(--white);
-    border-right: 2px solid var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 62.5px;
+  background-color: var(--white);
+  border-right: 2px solid var(--blue);
 }
 
 .topping-image div {
-    width: 70%;
-    height: 70%;
+  width: 70%;
+  height: 70%;
 }
 
 .topping-image .onions,
 .topping-image .peppers,
 .topping-image .chicken {
-    width: 25%;
-    border: none;
-    transform: rotate(30deg);
+  width: 25%;
+  border: none;
+  transform: rotate(30deg);
 }
 
 .topping-image .mushrooms {
-    position: relative;
-    height: 45%;
-    border: none;
-    transform: translateY(-8px);
+  position: relative;
+  height: 45%;
+  border: none;
+  transform: translateY(-8px);
 }
 
 .topping-image .jalapenos::before,
 .topping-image .jalapenos::after {
-    display: none;
+  display: none;
 }
 
 .topping-label-content {
-    white-space: nowrap
+  white-space: nowrap;
 }
 
 .topping-label-text {
-    margin-right: 0px;
+  margin-right: 0px;
 }
 
 .topping-label-icons {
-    white-space: nowrap
+  white-space: nowrap;
 }
 
 .topping-input {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    border: 2px solid var(--blue);
-    background-color: var(--white);
-    margin: 0;
-    transform: translateY(-50%);
-    z-index: 1;
-    cursor: pointer;
-    -webkit-appearance: none;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--blue);
+  background-color: var(--white);
+  margin: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .topping-input:checked {
-    background-color: var(--white);
+  background-color: var(--white);
 }
 
 .topping-input:checked:focus {
-    outline-color: var(--white);
+  outline-color: var(--white);
 }
 
 .topping-input:checked::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 70%;
-    height: 70%;
-    border-radius: 50%;
-    background-image: radial-gradient(circle, #2e669e, var(--blue));
-    transform: translate(-50%, -50%) scale(0);
-    animation: scaleUp 120ms linear forwards;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, #2e669e, var(--blue));
+  transform: translate(-50%, -50%) scale(0);
+  animation: scaleUp 120ms linear forwards;
 }
 
 .topping-input:checked + .topping-label {
-    color: var(--white);
-    background-color: var(--light-blue);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  background-color: var(--light-blue);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-
 .vegetarian {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 .gluten {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .hot {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 
 .topping-label .topping-icon {
-    margin-right: 3px;
+  margin-right: 3px;
 }
 
 .topping-label .topping-icon:last-of-type {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 /* Pizza */
 
 .pizza-container {
-    padding: 20px;
-    border-radius: 40px;
-    border: 20px solid var(--white);
-    background-color: #efdabc;
-    background-size: cover;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.16) inset, var(--shadow);
+  padding: 20px;
+  border-radius: 40px;
+  border: 20px solid var(--white);
+  background-color: #efdabc;
+  background-size: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.16) inset, var(--shadow);
 }
 
 .pizza {
-    padding-top: 10px;
-    position: relative;
-    width: 100%;
-    border-radius: 50%;
-    background: url('/masa.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; 
+  padding-top: 10px;
+  position: relative;
+  width: 100%;
+  border-radius: 50%;
+  background: url("/masa.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .pizza::after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 /* Order Details */
 
 .order {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-    text-align: center;
-    max-height: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-height: 450px;
 }
 
 .price {
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .order-scroll-bar {
@@ -323,178 +321,189 @@ h3 {
 }
 
 .order-toppings-list {
-    font-size: 20px;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-    text-align:center;
+  font-size: 20px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .tracking-list {
-    font-size: 20px;
-    padding-left: 60px;
-    padding-right: 50px;
-    margin-bottom: 10px;
-    text-transform: capitalize;
+  font-size: 20px;
+  padding-left: 60px;
+  padding-right: 50px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .tracking-list table {
-    border-collapse: collapse;
-  }
-  
- .tracking-list table, .tracking-list th, .tracking-list td {
-    text-align: center;
-    border: 1px solid black;
-  }
-
-.order-toppings-list li {
-    padding-right: 20px;
-    margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
-th, td {
-    padding: 10px 20px 0px 0px;
+.tracking-list table,
+.tracking-list th,
+.tracking-list td {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.order-toppings-list li {
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px 20px 0px 0px;
 }
 
 .order-btn {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 /* Order Confirmation */
 
 .order-confirmation,
 .tracking-view {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    opacity: 0;
-    z-index: 5;
-    background-color: rgba(0, 0, 0, 0.6);
-    animation: fadeIn 120ms linear forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  opacity: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 120ms linear forwards;
 }
 
 /* Form */
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    min-width: 100px;
-    min-height: 400px;
-    padding: 20px 40px 40px 40px;
-    border-radius: 6px;
-    box-shadow: 0px 8px 36px #222;
-    background-color: #fefefe;
-    transform: translateY(-50vw);
-    animation: slideInDown 700ms 100ms forwards cubic-bezier(0.17, 0.67, 0.66, 1.25);
-  }
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-width: 100px;
+  min-height: 400px;
+  padding: 20px 40px 40px 40px;
+  border-radius: 6px;
+  box-shadow: 0px 8px 36px #222;
+  background-color: #fefefe;
+  transform: translateY(-50vw);
+  animation: slideInDown 700ms 100ms forwards
+    cubic-bezier(0.17, 0.67, 0.66, 1.25);
+}
 
-  .tracking-format {
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    min-width: 100px;
-    min-height: 200px;
-    padding: 20px 40px 40px 40px;
-    border-radius: 6px;
-    box-shadow: 0px 8px 36px #222;
-    background-color: #fefefe;
-    transform: translateY(-50vw);
-    animation: slideInDown 700ms 100ms forwards cubic-bezier(0.17, 0.67, 0.66, 1.25);
-  }
-  
- form > h2, .tracking-format > h3 {
-    text-transform: none;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5em;
-    font-weight: lighter;
-    margin-top: 0.20em;
-    color: #222;
-    letter-spacing: 2px;
-    margin: 0px;
-  }
+.tracking-format {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  min-width: 100px;
+  min-height: 200px;
+  padding: 20px 40px 40px 40px;
+  border-radius: 6px;
+  box-shadow: 0px 8px 36px #222;
+  background-color: #fefefe;
+  transform: translateY(-50vw);
+  animation: slideInDown 700ms 100ms forwards
+    cubic-bezier(0.17, 0.67, 0.66, 1.25);
+}
 
-  .tracking-format > p {
-    text-transform: none;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5em;
-    font-weight: lighter;
-    margin-top: 0.20em;
-    color: #222;
-    letter-spacing: 2px;
-    padding-bottom: 0.30em;
-  }
+form > h2,
+.tracking-format > h3 {
+  text-transform: none;
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1.5em;
+  font-weight: lighter;
+  margin-top: 0.2em;
+  color: #222;
+  letter-spacing: 2px;
+  margin: 0px;
+}
 
-  .tracking-format > h1,  form > h1 {
-    text-transform: none;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 2em;
-    font-weight: lighter;
-    margin-top: 0.20em;
-    color: #222;
-    letter-spacing: 2px;
-    margin: 0px;
-  }
-  
-  label {
-    margin-bottom: 0.5em;
-    color: #444;
-    font-weight: lighter;
-  }
-  
-  input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    width: 100%;
-  }
+.tracking-format > p {
+  text-transform: none;
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1.5em;
+  font-weight: lighter;
+  margin-top: 0.2em;
+  color: #222;
+  letter-spacing: 2px;
+  padding-bottom: 0.3em;
+}
 
-  input, select {
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #d6d1d5;
-    margin-top: 5px;
-  }
-  select {
-    display: block;
-    width: 100%;
-    height: 35px;
-  }
-  form input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
-    margin-top: 2em;
-    margin-right: 10px;
-  }
+.tracking-format > h1,
+form > h1 {
+  text-transform: none;
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 2em;
+  font-weight: lighter;
+  margin-top: 0.2em;
+  color: #222;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+label {
+  margin-bottom: 0.5em;
+  color: #444;
+  font-weight: lighter;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input,
+select {
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid #d6d1d5;
+  margin-top: 5px;
+}
+select {
+  display: block;
+  width: 100%;
+  height: 35px;
+}
+form input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-top: 2em;
+  margin-right: 10px;
+}
 
 .close-btn {
-    margin-top: 20px;
-    background-color: var(--green);
+  margin-top: 20px;
+  background-color: var(--green);
 }
 
 /* Pizza Toppings */
 
 .topping {
-    position: absolute;
-    /* border: 2px solid rgba(0, 0, 0, 0.1); */
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: fadeIn 100ms linear forwards;
+  position: absolute;
+  /* border: 2px solid rgba(0, 0, 0, 0.1); */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 100ms linear forwards;
 }
 
 /* Queso */
@@ -503,29 +512,29 @@ form {
   width: 10%;
   height: 10%;
   border-radius: 50%;
-  background-image: url('/queso.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/queso.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .queso-1 {
-width: 100%;
-height: 100%;
-top: 50%;
-left: 52%;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 52%;
 }
 
 /* Pepperoni */
 
 .pepperoni {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    background-image: url('/peperonni.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  background-image: url("/peperonni.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .pepperoni-1 {
@@ -538,13 +547,13 @@ left: 52%;
 /* Bacon */
 
 .tocineta {
-    width: 6%;
-    height: 13%;
-    border-radius: 15%;
-    background-image: url('/tocineta.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 6%;
+  height: 13%;
+  border-radius: 15%;
+  background-image: url("/tocineta.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .tocineta-1 {
@@ -557,175 +566,175 @@ left: 52%;
 /* Sausage */
 
 .chorizo {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    background-image: url('/chorizo.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  background-image: url("/chorizo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .chorizo-1 {
-    top: 50%;
-    left: 52%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 52%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Ham */
 
 .jamon {
-    width: 12%;
-    height: 7%;
-    border-radius: 15%;
-    background-image: url('/jamon.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 12%;
+  height: 7%;
+  border-radius: 15%;
+  background-image: url("/jamon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .jamon-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Mushroom */
 
 .champiñon {
-    width: 8%;
-    height: 5%;
-    border: none;
-    border-radius: 50% 50% 10% 10%;
-    background-image: url('/champiñon.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 8%;
+  height: 5%;
+  border: none;
+  border-radius: 50% 50% 10% 10%;
+  background-image: url("/champiñon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .champiñon-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Peppers */
 
 .pimenton {
-    width: 3%;
-    height: 15%;
-    border: none;
-    border-radius: 30% 10% 10% 30%;
-    background-image: url('/pimenton.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 3%;
+  height: 15%;
+  border: none;
+  border-radius: 30% 10% 10% 30%;
+  background-image: url("/pimenton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .pimenton-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Onions */
 
 .cebolla {
-    width: 3%;
-    height: 15%;
-    border: none;
-    border-radius: 50% 15% 15% 50%;
-    background-image: url('/cebolla.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 3%;
+  height: 15%;
+  border: none;
+  border-radius: 50% 15% 15% 50%;
+  background-image: url("/cebolla.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .cebolla-1 {
-    top: 49%;
-    left: 52%;
-    width: 100%;
-    height: 100%;
+  top: 49%;
+  left: 52%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Chicken */
 
 .pollo {
-    width: 5%;
-    height: 14%;
-    border-radius: 20% 40% 100% 50%;
-    background-image: url('/pollo.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 5%;
+  height: 14%;
+  border-radius: 20% 40% 100% 50%;
+  background-image: url("/pollo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .pollo-1 {
-    top: 50%;
-    left: 53%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 53%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Pineapple */
 
 .piña {
-    width: 10%;
-    height: 7%;
-    border-radius: 15% 15% 100% 15%;
-    background-image: url('/piña.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 10%;
+  height: 7%;
+  border-radius: 15% 15% 100% 15%;
+  background-image: url("/piña.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .piña-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Olives */
 
 .aceituna {
-    width: 7%;
-    height: 7%;
-    border-radius: 50%;
-    background-image: url('/aceituna.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 7%;
+  height: 7%;
+  border-radius: 50%;
+  background-image: url("/aceituna.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .aceituna-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Jalapenos */
 
 .jalapeño {
-    width: 8%;
-    height: 8%;
-    border-radius: 50%;
-    background-image: url('/jalapeño.png');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  background-image: url("/jalapeño.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .jalapeño-1 {
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Meat */
@@ -734,10 +743,10 @@ left: 52%;
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/carne_molida.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/carne_molida.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .carne-1 {
@@ -753,10 +762,10 @@ left: 52%;
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/ciruela.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/ciruela.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .ciruela-1 {
@@ -772,10 +781,10 @@ left: 52%;
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/maiz_tierno.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/maiz_tierno.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .maiz-1 {
@@ -791,9 +800,9 @@ left: 52%;
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/oregano.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
+  background-image: url("/oregano.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 
@@ -804,17 +813,16 @@ left: 52%;
   height: 100%;
 }
 
-
 /* Salami */
 
 .salami {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/salami.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/salami.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .salami-1 {
@@ -830,10 +838,10 @@ left: 52%;
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/tomate.png');
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center; 
+  background-image: url("/tomate.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .tomate-1 {
@@ -847,7 +855,7 @@ left: 52%;
   width: 15%;
   height: 8%;
   border-radius: 50%;
-  background-image: url('/logo.png');
+  background-image: url("/logo.png");
   /* background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;  */
@@ -856,52 +864,52 @@ left: 52%;
 /* Media Queries */
 
 @media (max-width: 980px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
+  .container {
+    grid-template-columns: 1fr;
+  }
 
-    .topping-select {
-        grid-row: initial;
-    }
+  .topping-select {
+    grid-row: initial;
+  }
 
-    .order-toppings li {
-        flex-grow: 0;
-    }
+  .order-toppings li {
+    flex-grow: 0;
+  }
 }
 
 @media (max-width: 500px) {
-    .topping-label {
-        font-size: 16px;
-        padding: 15px 45px 15px 65px;
-    }
+  .topping-label {
+    font-size: 16px;
+    padding: 15px 45px 15px 65px;
+  }
 
-    .topping-input {
-        width: 25px;
-        height: 25px;
-        right: 15px;
-    }
+  .topping-input {
+    width: 25px;
+    height: 25px;
+    right: 15px;
+  }
 
-    .topping-image {
-        width: 55px;
-    }
+  .topping-image {
+    width: 55px;
+  }
 }
 
 /* Animations */
 
 @keyframes fadeIn {
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInDown {
-    100% {
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes scaleUp {
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

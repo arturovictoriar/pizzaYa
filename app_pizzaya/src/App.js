@@ -1,7 +1,17 @@
+/**
+ * PizzaYa web platform
+ * This platform let clients order pizzas and let admin check the daily tracking
+ * By Arturo Victoria Rincon
+ * github name: arvicrin
+ */
+
 import React from "react";
 
 const trackingDailyPizzaYa = [];
 
+/**
+ * Class PizzaYa, main class, let the client order pizzas and let admin check the daily tracking
+ */
 class PizzaYa extends React.Component {
   state = {
     toppingOptions: {
@@ -70,14 +80,14 @@ class PizzaYa extends React.Component {
     date: "",
     checkTrackingDaily: false,
     allNamePizzas: [
-        'La light',
-        'La simple',
-        'La duo',
-        'Trifasica',
-        'Muy poquito',
-        'La garosa',
-        'Hasta estallar'
-    ]
+      "La light",
+      "La simple",
+      "La duo",
+      "Trifasica",
+      "Muy poquito",
+      "La garosa",
+      "Hasta estallar",
+    ],
   };
 
   confirmOrderBtnRef = React.createRef();
@@ -85,6 +95,12 @@ class PizzaYa extends React.Component {
   openTrackingTable = React.createRef();
   closeTrackingTable = React.createRef();
 
+  /**
+   * Gestiona los aderezos selecionados
+   * @date 2020-07-02
+   * @param {any} e
+   * @returns {any}
+   */
   handleToppingOptionClick = (e) => {
     if (e.target.className === "topping-input") {
       const selectedTopping = e.target.id;
@@ -101,6 +117,11 @@ class PizzaYa extends React.Component {
     }
   };
 
+  /**
+   * Gestiona el comportamiento del boton de la orden de pizza
+   * @date 2020-07-02
+   * @returns {any}
+   */
   handleOrderSubmit = () => {
     this.setState(
       (prevState) => ({ orderConfirmed: !prevState.orderConfirmed }),
@@ -109,27 +130,35 @@ class PizzaYa extends React.Component {
           this.closeConfirmationBtnRef.current.focus();
           this.setState({ totalPrice: parseInt(this.totalPricePizzaYa()) });
           this.setState({ date: new Date().toLocaleString() });
-          switch(this.state.selectedToppings.length) {
+          switch (this.state.selectedToppings.length) {
             case 0:
-                this.setState({ namePizza: this.state.allNamePizzas[0] });
-            break;
+              this.setState({ namePizza: this.state.allNamePizzas[0] });
+              break;
             case 1:
-                this.setState({ namePizza: this.state.allNamePizzas[1] });
-            break;
+              this.setState({ namePizza: this.state.allNamePizzas[1] });
+              break;
             case 2:
-                this.setState({ namePizza: this.state.allNamePizzas[2] });
-            break;
+              this.setState({ namePizza: this.state.allNamePizzas[2] });
+              break;
             case 3:
-                this.setState({ namePizza: this.state.allNamePizzas[3] });
-            break;
-            case 4: case 6: case 7: case 8: case 9: case 10:
-                this.setState({ namePizza: this.state.allNamePizzas[4] });
-            break;
-            case 11: case 12: case 13: case 14:
-                this.setState({ namePizza: this.state.allNamePizzas[5] });
-            break;
+              this.setState({ namePizza: this.state.allNamePizzas[3] });
+              break;
+            case 4:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+              this.setState({ namePizza: this.state.allNamePizzas[4] });
+              break;
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+              this.setState({ namePizza: this.state.allNamePizzas[5] });
+              break;
             default:
-                this.setState({ namePizza: this.state.allNamePizzas[6] });
+              this.setState({ namePizza: this.state.allNamePizzas[6] });
           }
         } else {
           this.confirmOrderBtnRef.current.focus();
@@ -144,6 +173,11 @@ class PizzaYa extends React.Component {
     );
   };
 
+  /**
+   * Limpia las variables despues de cada pedido
+   * @date 2020-07-02
+   * @returns {any}
+   */
   cleanUp = () => {
     this.setState({ username: "" });
     this.setState({ telephone: "" });
@@ -152,6 +186,11 @@ class PizzaYa extends React.Component {
     this.setState({ date: "" });
   };
 
+  /**
+   * Guarda el pedido en una variable global
+   * @date 2020-07-02
+   * @returns {any}
+   */
   saveOrder = () => {
     const order = {};
     order.username = this.state.username;
@@ -164,6 +203,11 @@ class PizzaYa extends React.Component {
     trackingDailyPizzaYa.push(order);
   };
 
+  /**
+   * Gestiona el comportamiento del boton para tracking
+   * @date 2020-07-02
+   * @returns {any}
+   */
   handleCheckingTracking = () => {
     this.setState(
       (prevState) => ({ checkTrackingDaily: !prevState.checkTrackingDaily }),
@@ -177,6 +221,11 @@ class PizzaYa extends React.Component {
     );
   };
 
+  /**
+   * Suma todos los aderezos
+   * @date 2020-07-02
+   * @returns {any}
+   */
   totalPricePizzaYa = () => {
     let total = this.state.basePrice;
     this.state.selectedToppings.map((topping) => {
@@ -192,10 +241,22 @@ class PizzaYa extends React.Component {
     return total.toString();
   };
 
+  /**
+   * Gestiona el input para guardar el nombre
+   * @date 2020-07-02
+   * @param {any} event
+   * @returns {any}
+   */
   handleName = (event) => {
     this.setState({ username: event.target.value });
   };
 
+  /**
+   * Gestiona el input para guardar el telefono
+   * @date 2020-07-02
+   * @param {any} event
+   * @returns {any}
+   */
   handleTelephone = (event) => {
     this.setState({ telephone: event.target.value });
   };
@@ -252,12 +313,19 @@ class PizzaYa extends React.Component {
   }
 }
 
+/**
+ * Header de la plataforma, aloja el titulo y el boton para ver el tracking
+ * @date 2020-07-02
+ * @param {any} {openTrackingTable
+ * @param {any} handleCheckingTracking}
+ * @returns {any}
+ */
 function Header({ openTrackingTable, handleCheckingTracking }) {
   return (
     <header>
       <div className="logo-pizza-ya"></div>
       <h1>Pizza Ya</h1>
-      <div className='button-header'>
+      <div className="button-header">
         <button
           className="btn order-btn"
           onClick={handleCheckingTracking}
@@ -271,6 +339,17 @@ function Header({ openTrackingTable, handleCheckingTracking }) {
   );
 }
 
+/**
+ * Seleciona el aderezo
+ * @date 2020-07-02
+ * @param {any} {toppingOptions
+ * @param {any} toppingPrice
+ * @param {any} chickenToppingPrice
+ * @param {any} peperoniToppingPrice
+ * @param {any} handleToppingOptionClick
+ * @param {any} }
+ * @returns {any}
+ */
 function ToppingSelect({
   toppingOptions,
   toppingPrice,
@@ -297,6 +376,12 @@ function ToppingSelect({
   );
 }
 
+/**
+ * Muestra todas las optiones de aderezo
+ * @date 2020-07-02
+ * @param {any} {topping}
+ * @returns {any}
+ */
 function ToppingOption({ topping }) {
   return (
     <li className="topping-option">
@@ -317,6 +402,13 @@ function ToppingOption({ topping }) {
   );
 }
 
+/**
+ * Muestra el dibujo de la pizza
+ * @date 2020-07-02
+ * @param {any} {toppingOptions
+ * @param {any} selectedToppings}
+ * @returns {any}
+ */
 function Pizza({ toppingOptions, selectedToppings }) {
   return (
     <div className="pizza-container">
@@ -334,6 +426,13 @@ function Pizza({ toppingOptions, selectedToppings }) {
   );
 }
 
+/**
+ * Agrega los aderezos encima de la pizza
+ * @date 2020-07-02
+ * @param {any} {topping
+ * @param {any} toppingAmount}
+ * @returns {any}
+ */
 function PizzaTopping({ topping, toppingAmount }) {
   let toppings = [];
 
@@ -349,6 +448,16 @@ function PizzaTopping({ topping, toppingAmount }) {
   return toppings;
 }
 
+/**
+ * Muestra los detalles de la orden
+ * @date 2020-07-02
+ * @param {any} {selectedToppings
+ * @param {any} totalPrice
+ * @param {any} confirmOrderBtnRef
+ * @param {any} handleOrderSubmit
+ * @param {any} }
+ * @returns {any}
+ */
 function OrderDetails({
   selectedToppings,
   totalPrice,
@@ -407,6 +516,21 @@ function OrderDetails({
   );
 }
 
+/**
+ * Muestra el resumen del pedido y pido algunos datos personales
+ * @date 2020-07-02
+ * @param {any} {closeConfirmationBtnRef
+ * @param {any} handleOrderSubmit
+ * @param {any} username
+ * @param {any} handleName
+ * @param {any} telephone
+ * @param {any} handleTelephone
+ * @param {any} namePizza
+ * @param {any} price
+ * @param {any} date
+ * @param {any} }
+ * @returns {any}
+ */
 function OrderConfirmation({
   closeConfirmationBtnRef,
   handleOrderSubmit,
@@ -470,6 +594,13 @@ function OrderConfirmation({
   );
 }
 
+/**
+ * Muestra las ventas del dia
+ * @date 2020-07-02
+ * @param {any} {handleCheckingTracking
+ * @param {any} closeTrackingTable}
+ * @returns {any}
+ */
 function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {
   let totalIncome = 0;
   trackingDailyPizzaYa.map((order) => {
@@ -503,7 +634,7 @@ function TrackingDaily({ handleCheckingTracking, closeTrackingTable }) {
                   <td>{order.namePizza}</td>
                   <td>{order.totalPrice}</td>
                   <td>{order.date}</td>
-                  <td>{order.toppings.join(', ')}</td>
+                  <td>{order.toppings.join(", ")}</td>
                 </tr>
               ))}
             </tbody>

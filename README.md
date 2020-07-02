@@ -55,6 +55,8 @@ La plataforma PizzaYa se le debe mejorar el css en las vistas de tracking y conf
 
 Formato CSS con tablas en React
 
+Puede aparecerte un error de vulnerabilidad cuando instales todas las dependencias en win o mac. Solo son advertencias asi que no hay mucho problema con ello.
+
 ## Licencia
 
 free use license

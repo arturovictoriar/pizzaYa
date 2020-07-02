@@ -1,5 +1,7 @@
 import React from 'react';
 
+const trackingDailyPizzaYa = [];
+
 class PizzaYa extends React.Component {
 
   state = {
@@ -62,11 +64,18 @@ class PizzaYa extends React.Component {
       chikenToppingPrice: 5000,
       peperoniToppingPrice: 4500,
       totalPrice: 0,
-      orderConfirmed: false
+      orderConfirmed: false,
+      username: '',
+      telephone: '',
+      namePizza: '',
+      date: ''
   }
 
   confirmOrderBtnRef = React.createRef();
   closeConfirmationBtnRef = React.createRef();
+  openTrackingTable = React.createRef();
+  closeTrackingTable = React.createRef();
+
 
   handleToppingOptionClick = e => {
       if (e.target.className === 'topping-input') {
@@ -83,11 +92,38 @@ class PizzaYa extends React.Component {
       this.setState(prevState => (
           { orderConfirmed: !prevState.orderConfirmed }
       ), () => {
-          this.state.orderConfirmed ?
-              this.closeConfirmationBtnRef.current.focus() :
+          if (this.state.orderConfirmed) { 
+              this.closeConfirmationBtnRef.current.focus();
+              this.setState({ totalPrice: parseInt(this.totalPricePizzaYa()) });
+              this.setState({ date: new Date().toLocaleString() });
+          } else {
               this.confirmOrderBtnRef.current.focus();
-      })
+              this.saveOrder();
+              console.log(trackingDailyPizzaYa, this.state.selectedToppings);
+              this.cleanUp();
+              alert("Tu orden ha sido recibida, en breve estara contigo. Disfrutala!");
+          }
+      });
+      
   };
+
+  cleanUp = () => {
+    this.setState({ username: '' });
+    this.setState({ telephone: '' });
+    this.setState({ namePizza: '' });
+    this.setState({ totalPrice: 0});
+    this.setState({ date: '' });
+  }
+
+  saveOrder = () => {
+      const order = {};
+      order.username = this.state.username;
+      order.telephone = this.state.telephone;
+      order.namePizza = this.state.namePizza;
+      order.totalPrice = this.state.totalPrice;
+      order.date = this.state.date;
+      trackingDailyPizzaYa.push(order);
+  }
 
   totalPricePizzaYa = () => {
     let total = this.state.basePrice;
@@ -101,8 +137,15 @@ class PizzaYa extends React.Component {
         }
         return total;
     });
-    this.setState.totalPrice = total;
     return total.toString();
+  }
+
+  handleName = (event) => {
+    this.setState({username: event.target.value});
+  }
+
+  handleTelephone = (event) => {
+    this.setState({telephone: event.target.value});
   }
 
   render() {
@@ -131,6 +174,13 @@ class PizzaYa extends React.Component {
                               <OrderConfirmation
                                   handleOrderSubmit={ this.handleOrderSubmit }
                                   closeConfirmationBtnRef={ this.closeConfirmationBtnRef }
+                                  username={ this.state.username }
+                                  handleName= { this.handleName }
+                                  telephone={ this.state.telephone }
+                                  handleTelephone={ this.handleTelephone }
+                                  namePizza={ this.state.namePizza }
+                                  price={ this.state.totalPrice }
+                                  date={ this.state.date }
                               />
                               : null
                       }
@@ -257,10 +307,10 @@ function OrderDetails({ selectedToppings, totalPrice, confirmOrderBtnRef, handle
   );
 }
 
-function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
+function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit, username, handleName, telephone, handleTelephone, namePizza, price, date }) {
     return (
         <div className='order-confirmation'>
-            <form>
+            <form onSubmit={handleOrderSubmit}>
                     <h1>Datos del cliente</h1>
 
                     <label className='label-form'>
@@ -268,6 +318,7 @@ function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
                         <input
                         name="nombre"
                         type="nombre"
+                        onChange={ handleName }
                         required />
                     </label>
 
@@ -276,22 +327,22 @@ function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
                         <input
                         name="telefono"
                         type="telefono"
+                        onChange={ handleTelephone }
                         required />
                     </label>
 
                     <h2>Resumen</h2>
 
                     <div>
-                        <p><b>Nombre:</b> Arturo Victoria Rincon</p>
-                        <p><b>Telefono:</b> 3104267245</p>
-                        <p><b>Nombre de la pizza:</b> Madre mia</p>
-                        <p><b>Precio:</b> 478</p>
-                        <p><b>Fecha:</b> hoy</p>
+                        <p><b>Nombre:</b> { username }</p>
+                        <p><b>Telefono:</b> { telephone }</p>
+                        <p><b>Nombre de la pizza:</b> { namePizza }</p>
+                        <p><b>Precio:</b> { price }</p>
+                        <p><b>Fecha:</b> { date }</p>
                     </div>
 
                     <button 
                         className='btn close-btn'
-                        onClick={ handleOrderSubmit }
                         aria-label="Close Confirmation"
                         ref={ closeConfirmationBtnRef }
                     >

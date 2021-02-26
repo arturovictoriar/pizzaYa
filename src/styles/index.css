@@ -277,7 +277,7 @@ h3 {
   position: relative;
   width: 100%;
   border-radius: 50%;
-  background: url("/masa.png");
+  background: url("../utils/masa.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -512,7 +512,7 @@ form input[type="checkbox"] {
   width: 10%;
   height: 10%;
   border-radius: 50%;
-  background-image: url("/queso.png");
+  background-image: url("../utils/queso.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -531,7 +531,7 @@ form input[type="checkbox"] {
   width: 10%;
   height: 10%;
   border-radius: 50%;
-  background-image: url("/peperonni.png");
+  background-image: url("../utils/peperonni.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -550,7 +550,7 @@ form input[type="checkbox"] {
   width: 6%;
   height: 13%;
   border-radius: 15%;
-  background-image: url("/tocineta.png");
+  background-image: url("../utils/tocineta.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -569,7 +569,7 @@ form input[type="checkbox"] {
   width: 10%;
   height: 10%;
   border-radius: 50%;
-  background-image: url("/chorizo.png");
+  background-image: url("../utils/chorizo.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -588,7 +588,7 @@ form input[type="checkbox"] {
   width: 12%;
   height: 7%;
   border-radius: 15%;
-  background-image: url("/jamon.png");
+  background-image: url("../utils/jamon.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -608,7 +608,7 @@ form input[type="checkbox"] {
   height: 5%;
   border: none;
   border-radius: 50% 50% 10% 10%;
-  background-image: url("/champiñon.png");
+  background-image: url("../utils/champiñon.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -628,7 +628,7 @@ form input[type="checkbox"] {
   height: 15%;
   border: none;
   border-radius: 30% 10% 10% 30%;
-  background-image: url("/pimenton.png");
+  background-image: url("../utils/pimenton.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -648,7 +648,7 @@ form input[type="checkbox"] {
   height: 15%;
   border: none;
   border-radius: 50% 15% 15% 50%;
-  background-image: url("/cebolla.png");
+  background-image: url("../utils/cebolla.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -667,7 +667,7 @@ form input[type="checkbox"] {
   width: 5%;
   height: 14%;
   border-radius: 20% 40% 100% 50%;
-  background-image: url("/pollo.png");
+  background-image: url("../utils/pollo.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -686,7 +686,7 @@ form input[type="checkbox"] {
   width: 10%;
   height: 7%;
   border-radius: 15% 15% 100% 15%;
-  background-image: url("/piña.png");
+  background-image: url("../utils/piña.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -705,7 +705,7 @@ form input[type="checkbox"] {
   width: 7%;
   height: 7%;
   border-radius: 50%;
-  background-image: url("/aceituna.png");
+  background-image: url("../utils/aceituna.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -724,7 +724,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/jalapeño.png");
+  background-image: url("../utils/jalapeño.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -743,7 +743,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/carne_molida.png");
+  background-image: url("../utils/carne_molida.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -762,7 +762,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/ciruela.png");
+  background-image: url("../utils/ciruela.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -781,7 +781,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/maiz_tierno.png");
+  background-image: url("../utils/maiz_tierno.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -800,7 +800,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/oregano.png");
+  background-image: url("../utils/oregano.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -819,7 +819,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/salami.png");
+  background-image: url("../utils/salami.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -838,7 +838,7 @@ form input[type="checkbox"] {
   width: 8%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/tomate.png");
+  background-image: url("../utils/tomate.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -855,7 +855,7 @@ form input[type="checkbox"] {
   width: 15%;
   height: 8%;
   border-radius: 50%;
-  background-image: url("/logo.png");
+  background-image: url("../utils/logo.png");
   /* background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;  */

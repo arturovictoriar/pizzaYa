@@ -1,66 +1,77 @@
 # PizzaYa
 
-## Description
+![PizzaYa](./assets/pizzaya.png)
 
-Soy el dueño de una pizzería, y necesito saber el tracking de las pizzas que estoy vendiendo diariamente.
+## Description :book:
 
-Cada pizza está compuesta por la masa con un costo base de 10.000 pesos y un precio adicional por los ingredientes que se usen, debe haber mínimo 15 ingredientes para seleccionar con un costo de 3.000 cada uno , excepto el pollo que tiene un costo de 5.000 y el peperoni que tiene un costo 4.500.
+Daily Tracking Pizza.
 
-Debe haber una sección en donde se cree la pizza, se puedan añadir y quitar ingredientes y me calcule el precio de cada pizza. Adicional cada pizza debe tener un nombre tener un nombre.
+## Installation :floppy_disk:
 
-Cuando tenga la pizza lista deseo, agregar información de a quien se le vendió la pizza, la información que necesito que sea guardad es ( Nombre , teléfono, nombre de la pizza, el precio y fecha ).
+In Ubuntu 20:
 
-Como deseo ver el tracking de las pizzas debo tener un dashboard en donde pueda consultar las pizzas que he vendido a lo largo del tiempo, y donde pueda ver el detalle de cada una de las pizzas.
+0. Install nodejs and npm:
 
-## Requerimientos
+```console
+foo@bar:~$ apt install nodejs npm -y
+```
 
-Nota: Solo la masa cuesta 10.000 pesos y los ingredientes adicionales cuestan 3.000 pesos, excepto el pollo que cuesta 5.000 pesos y el peperonni que cuesta 4.500 pesos. La pizzeria cuenta con mas de 15 ingredientes disponibles para adicionarle a la pizza.
+1. Go inside the folder PizzaYa:
 
-- Desarrollar una vista para crear una pizza, aqui se puede añadir y quitar ingredientes. La pizza debe tener un nombre. Debe calcular el valor de la pizza.
+```console
+foo@bar:~$ cd PizzaYa
+```
 
-- Desarrollar una vista para hacer el checkout de las pizzas. Aqui se debe pedir la informacion del cliente: Nombre, telefono, nombre de la piza, precio y fecha.
+2. Install the node modules:
 
-- Desarrollar una vista para que muestre el traking diario de las pizzas. Aqui se tiene que ver el detalle de las pizzas: Ingredientes, numero de pizzas, nombre de la pizza, precio de la pizza y la fecha en que se vendio; y de los clientes: Nombre y telefono.
+```console
+foo@bar:~/PizzaYa$ npm install
+```
 
-## Solucion
+3. Run the service:
 
-Para el desarrollo de este projecto, se utilizaron las librerias react, react-dom y react-scrips.
+```console
+foo@bar:~/PizzaYa$ npm start
+```
 
-La plataforma diseñada cuenta con 3 vistas: en la principal se puede construir la pizza y ver el total del pedido, en la segunda se puede confirmar el pedido ingresando los datos del cliente y en la tercera se puede ver el tracking que la pizeria ha tenido en el dia.
+## Usage :open_file_folder:
 
-Nota 1: Para la lista de "opciones de aderezo", la lista de "aderezo selecionado" y la lista de "tracking" se planteo una ventana sin BarScroll visible pero con la funcionalidad de scrolling.
+1. Choose the ingrients of the pizza in the "Aderezos" section and make an order in the "Detalles de la Orden" Section.
+![order](./assets/order.png)
 
-Nota 2: Para salir de la vista "confirmar el pedido" se debe obligatoriamente ingresar el nombre y el telefono de la cliente para la pizza seleccionada.
+2. Type your name and your phone for completing the order.
+![payment](./assets/payment.png)
 
-## Instalacion
+3. Watch the daily orders in the traking button.
+![traking](./assets/traking.png)
 
-Instala Node.js
+## Support :email:
 
-## Uso
+LinkedIn:
 
-Entra a la carpeta app_pizzaya
-- cd app_pizzaya
+- [Arturo Victoria Rincon](https://www.linkedin.com/in/arturovictoriar/)
 
-Instala todos los componentes necesarios para trabajar con react
-- npm install
+Twitter:
 
-Una vez instalado todo, ejecuta el modo development para ver el projecto en tu browser
-- yarn start
+- [Arturo Victoria Rincon](https://twitter.com/arturovictoriar)
 
-## Estatus del projecto
+Portfolio website:
 
-La plataforma PizzaYa se le debe mejorar el css en las vistas de tracking y confirm order, pero esta funcionando deacuerdo a los requerimientos. Se debe hacer un split del codigo en components para que quede mas organizado.
+- [Arturo Victoria Rincon](http://arturovictoriar.github.io/)
 
-## Problemas
+## Authors and acknowledgment :school:
 
-Formato CSS con tablas en React
+Arturo Victoriar Rincon is a software engineer with over 2 years of experience in fields like Web, IoT and AI. Proven assertive communicator after 1 year of working with blind people.
+Looking to contribute web and machine learning projects.
 
-Puede aparecerte un error de vulnerabilidad cuando instales todas las dependencias en win o mac. Solo son advertencias asi que no hay mucho problema con ello.
+## License :warning:
 
-## Licencia
+:copyright: 2021 All rights reserved.
 
-free use license
+## Project status :white_check_mark:
 
-## Author
+The PizzaYa platform should improve the css in the follow-up views and confirm order. It's need split the service in components.
 
-[Arturo Victoria Rincon](https://github.com/arvicrin)
+## Author :black_nib:
+
+* __Arturo Victoria Rincon__ <[arturovictoriar](https://github.com/arturovictoriar)>
